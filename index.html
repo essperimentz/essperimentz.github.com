@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset=utf-8 />
-	<title>Essperimentz.ca</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
-	<style>
-	html{margin:0;padding:0;}
-	body {
-		margin:0;padding:0;
-		font-family: 'Anonymous Pro', arial, serif;
-		font-weight:bold;
-		background:#f0f0f9;
-		position:absolute;top:0;right:0;bottom:0;left:0;
-		-webkit-box-shadow:inset 0 0 24px 0 rgba(0,0,50,0.5);
-		-moz-box-shadow:inset 0 0 24px 0 rgba(0,0,50,0.5);
-		box-shadow:inset 0 0 24px 0 rgba(0,0,50,0.5);
-		text-align:center;
-	}
-	h1{font-size:1.75em;color:#c03;}
-	span{color:#ccd;}
-	p{font-size:1.5em;}
-	</style>
-	<script type="text/javascript" charset="utf-8">
-		$(function() {
-			$.getJSON('http://github.com/api/v2/json/repos/show/essperimentz?callback=?',function( json ) {
-				var nav = $('<nav>').appendTo(document.body)
-				json.repositories.forEach(function(repo) {
-					var link = $('<a>').attr( { href:repo.url,text:repo.name }, true ),
-						content = $('<p>').text(repo.description).append(', ',link)
-					nav.append( content )
-				})
-			})
-		})
-	</script>
-</head>
-<body>
-	<header>
-		<h1>Essperimentz<span>.ca</span></h1>
-		<p>Hacky experimental doodads...</p>
-	</header>
+
+	<head>
+		
+		<meta charset=utf-8 />
+		
+		<title>Essperimentz.ca</title>
+		
+		
+		<link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css' />
+		
+		<style>
+			html{margin:0;padding:0;}
+			body{margin:0;padding:0;font-family:'Anonymous Pro',arial,serif;font-weight:bold;background:#f0f0f9;position:absolute;top:0;right:0;bottom:0;left:0;-webkit-box-shadow:inset 0 0 24px 0 rgba(0,0,50,0.5);-moz-box-shadow:inset 0 0 24px 0 rgba(0,0,50,0.5);box-shadow:inset 0 0 24px 0 rgba(0,0,50,0.5);text-align:center;color:rgba(0,0,10,0.5);text-shadow:1px 1px 1px rgba(255,255,255,0.2),-1px -1px 1px rgba(0,0,0,0.1);}
+			h1{font-size:1.75em;color:#c03;}
+			span{color:#ccd;}
+			p{font-size:1.5em;}
+			nav{width:60%;margin:1em 20%;text-align:left;font-size:0.75em;font-family:sans-serif;}
+			nav p:before{content:"- ";}
+			nav p a{float:right;}
+			a{color:#fff;text-decoration:none;font-weight:bold;background:#aac;padding:0.2em 0.5em;border-radius:0.3em;-webkit-border-radius:0.3em;-moz-border-radius:0.3em;}
+			a:hover{background:#fff;color:#334;}
+			footer{position:fixed;bottom:1em;width:100%;font-size:0.5em;}
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(function(){$.getJSON('http://github.com/api/v2/json/repos/show/essperimentz?callback=?',function(json){var nav=$('<nav>').appendTo(document.body)
+			json.repositories.forEach(function(repo){var link=$('<a>').attr({href:repo.url,text:repo.name},true),content=$('<p>').text(repo.description).append(' . . . . .  .  .  .   .',link)
+			nav.append(content)})})})
+		</script>
+	</head>
+
+	<body>
 	
-</body>
+		<header>
+		
+			<h1>Essperimentz<span>.ca</span></h1>
+		
+			<p>Hacky experimental doodads...</p>
+		
+		</header>
+	
+		<footer>
+		
+			<p>This thingamabob and most of it's related stuffs are made by <a href="http://about.me/quickredfox">Quickredfox</a>. Some are intentionally ugly.</p>
+		
+		</footer>
+	
+	</body>
+
 </html>
