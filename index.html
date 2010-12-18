@@ -27,7 +27,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(function(){$.getJSON('http://github.com/api/v2/json/repos/show/essperimentz?callback=?',function(json){var nav=$('<nav>').appendTo(document.body)
-			json.repositories.forEach(function(repo){var link=$('<a>').attr({href:repo.url,text:repo.name},true),content=$('<p>').text(repo.description).append(' . . . . .  .  .  .   .',link)
+			json.repositories.forEach(function(repo){var link=$('<a>').attr({href:repo.homepage?repo.homepage:repo.url,text:repo.name},true),content=$('<p>').text(repo.description).append(' . . . . .  .  .  .   .',link)
 			nav.append(content)})})})
 		</script>
 	</head>
