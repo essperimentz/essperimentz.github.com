@@ -21,6 +21,7 @@
                 $('script').each(function() {
                     var src = $(this).attr('src');
                     var re = /someone\.js?k=(\w+)/;
+                    console.debug(src.match(re),re,opts,src)
                     if(src && (re).test(src)){
                         opts.key = src.match(re)[1];
                     }
