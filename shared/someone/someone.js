@@ -6,6 +6,7 @@
         $.someone.element.empty().append(card, logout)
         return $.someone.trigger('connected', [user]);
     };
+    http://essperimentz.ca/shared/someone/
     // jQuery.someone();
     $.someoneDefaults = { placeholder: document.body };
     $.someone = function(options) {
@@ -15,6 +16,7 @@
             lib.initialized = true;
             $.someone = $(lib);
             opts.placeholder = opts.placeholder || 'body';
+            
             if(!opts.key){
                 $('script').each(function() {
                     var src = $(this).attr('src');
@@ -25,6 +27,7 @@
                 });                
             };
             $.getScript('http://platform.twitter.com/anywhere.js?v=1&id=' + opts.key, function onGetScript( event ) {
+                twttr.anywhere.config({callbackURL: opts.callbackURL })
                 twttr.anywhere(function(T) {
                     $.extend($.someone, {
                         element: $(opts.placeholder)
