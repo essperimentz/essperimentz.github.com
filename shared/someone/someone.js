@@ -7,7 +7,6 @@
         $.someone.element.empty().append(card, logout)
         return $.someone.trigger('connected', [user]);
     };
-    http://essperimentz.ca/shared/someone/
     // jQuery.someone();
     $.someoneDefaults = { placeholder: document.body };
     $.someone = function(options) {
