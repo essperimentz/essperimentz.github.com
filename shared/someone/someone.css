@@ -1,0 +1,5 @@
+#twitter-disconnect{display:inline-block;height:22px;width:146px;overflow:hidden;padding:0;margin:0;background:blue url(./disconnect.png) top left no-repeat;}
+#twitter-disconnect:hover{background-position:0 -23px;}
+#twitter-disconnect:active{background-position:0 -46px;}
+#twitter-connected-user{display:inline-block;padding-right:0.5em;}
+#twitter-connected-user img{margin-right:0.2em;}

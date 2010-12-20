@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>someone</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="someone.css" type="text/css" media="screen" charset="utf-8" />
+	<script src="someone.js?k=iFFIdS7AbxSd4hE9zZFDmw" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+
+	// var ANYWHERE_API_KEY = 'iFFIdS7AbxSd4hE9zZFDmw';
+	$.someone({placeholder:'#holder',reload:true})
+	$.someone.bind('anywhere',function(event) {
+		console.debug(event.type+' event.')
+	});
+	$.someone.bind('connected',function(event) {
+		console.debug(event.type+' event.')
+	});
+			
+	</script>
+</head>
+<body>
+	<div id="holder"></div>
+</body>
+</html>
