@@ -1,3 +1,4 @@
+
 (function() {
     function onConnected(event, user) {
         var logout = $('<div id="twitter-disconnect"></div>');
