@@ -21,8 +21,7 @@
     }
     // jQuery.someone();
     $.someone = function(callbackURL) {
-        var lib = arguments.callee,
-            opts = $.extend( {}, options);
+        var lib = arguments.callee;
         if (lib.initialized !== true) {
             lib.initialized = true;
             $.someone = $( lib );
