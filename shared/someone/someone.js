@@ -1,7 +1,7 @@
 
 (function() {
     function onConnected(event, user) {
-        $('#account').removeClass('loading');
+        $('#twitter-account').removeClass('loading');
         var logout = $('<div id="twitter-disconnect"></div>');
         logout.bind('click', function() { twttr.anywhere.signOut() });
         var card = '<p id="twitter-connected-user"><img width="14" height="14" src="' + user.profileImageUrl + '">@' + user.screenName + '</p>';
@@ -48,5 +48,7 @@
         };
         return $.someone;
     };
-
+    $(function() {
+        $('head').append('<link rel="stylesheet" href="http://essperimentz.ca/shared/someone/someone.css" />')
+    })
 })()
