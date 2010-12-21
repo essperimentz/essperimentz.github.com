@@ -7,26 +7,29 @@
         $.someone.element.empty().append(card, logout)
         return $.someone.trigger('connected', [user]);
     };
+    function findKey() {
+        var key;
+        $('script').each(function() {
+            var src = $(this).attr('src');
+            var re = /someone\.js\?k=(\w+)/;
+            if(src && (re).test(src)){
+                var m = src.match(re);
+                if(m && m[1]) key = m[1];  
+            }
+        });
+        return key;
+    }
     // jQuery.someone();
-    // $.someoneDefaults = { placeholder: document.body };
-    $.someone = function(options) {
+    $.someone = function(callbackURL) {
         var lib = arguments.callee,
             opts = $.extend( {}, options);
         if (lib.initialized !== true) {
             lib.initialized = true;
             $.someone = $( lib );
-            if(!opts.key){
-                $('script').each(function() {
-                    var src = $(this).attr('src');
-                    var re = /someone\.js\?k=(\w+)/;
-                    if(src && (re).test(src)){
-                        var m = src.match(re);
-                        if(m && m[1]) opts.key = m[1];  
-                    }
-                });                
-            };
+            var key = findKey();
+            if(!key) return;
             $.getScript('http://platform.twitter.com/anywhere.js?v=1&id=' + opts.key, function onGetScript( event ) {
-                twttr.anywhere.config({callbackURL: opts.callbackURL })
+                twttr.anywhere.config({callbackURL: callbackURL })
                 twttr.anywhere(function(T) {
                     $.extend($.someone, {
                         element: $('<footer id="account" class="loading"></footer>').appendTo( document.body )
