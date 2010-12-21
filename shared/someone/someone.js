@@ -1,6 +1,7 @@
 
 (function() {
     function onConnected(event, user) {
+        $('#account').removeClass('loading');
         var logout = $('<div id="twitter-disconnect"></div>');
         logout.bind('click', function() { twttr.anywhere.signOut() });
         var card = '<p id="twitter-connected-user"><img width="14" height="14" src="' + user.profileImageUrl + '">@' + user.screenName + '</p>';
@@ -47,10 +48,5 @@
         };
         return $.someone;
     };
-	$.someone.bind('anywhere',function(event) {		
-		$('#account').removeClass('loading');
-	});		
-	$.someone.bind('connected',function(event) {
-		$('#account').removeClass('loading');			
-	});
+
 })()
