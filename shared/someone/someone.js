@@ -29,11 +29,12 @@
             var key = findKey();
             if(!key) return;
             $.getScript('http://platform.twitter.com/anywhere.js?v=1&id=' + key, function onGetScript( event ) {
+                $.extend($.someone, {
+                    element: $('<footer id="twitter-account" class="loading"></footer>').appendTo( document.body )
+                });
                 twttr.anywhere.config({callbackURL: callbackURL })
                 twttr.anywhere(function(T) {
-                    $.extend($.someone, {
-                        element: $('<footer id="account" class="loading"></footer>').appendTo( document.body )
-                    });
+                    $('#twitter-account').removeClass('loading');
                     T.bind('authComplete', onConnected);
                     T.bind('signOut',
                     function() {

@@ -1,12 +1,11 @@
 html > body{padding-top:34px!important;position:relative;}
-#twitter-account{position:fixed;top:0;padding:0 1em;left:0;right:0;background:rgba(0,0,0,0.5);font-size:12px;height:34px;vertical-align:center;font-family:sans-serif;color:#fff;text-align:right;-webkit-box-shadow:0 0 2px 0 #000;-moz-box-shadow:0 0 2px 0 #000;box-shadow:0 0 2px 0 #000;border-bottom:1px solid rgba(0,0,0,0.9);}
+#twitter-account{position:fixed;top:0;padding:0 1em;left:0;right:0;background:rgba(0,0,0,0.75);font-size:12px;height:34px;vertical-align:center;font-family:sans-serif;color:#fff;text-align:right;-webkit-box-shadow:0 0 2px 0 #000;-moz-box-shadow:0 0 2px 0 #000;box-shadow:0 0 2px 0 #000;border-bottom:1px solid rgba(0,0,0,0.9);}
 #twitter-account.loading{background-image:url(http://essperimentz.ca/shared/someone/loader.gif);background-position:10px center;background-repeat:no-repeat;}
 #twitter-account *{display:inline-block;vertical-align:middle;line-height:34px;}
 #twitter-account iframe{margin-top:0.5em;}
-#twitter-account p{padding:0 0.75em;margin:0 0.75em;background:rgba(0,0,0,0.5);font-weight:bold;}
-#twitter-account img{-webkit-box-shadow:0 0 2px 0 rgba(255,255,255,0.3)}
+#twitter-account p{padding:0 0.75em;margin:0 0.75em;background:rgba(0,0,0,0.75);font-weight:bold;}
 #twitter-disconnect{display:inline-block;height:22px;width:146px;overflow:hidden;padding:0;margin:0;background:blue url(./disconnect.png) top left no-repeat;}
 #twitter-disconnect:hover{background-position:0 -23px;}
 #twitter-disconnect:active{background-position:0 -46px;}
 #twitter-connected-user{display:inline-block;padding-right:0.5em;}
-#twitter-connected-user img{margin-right:0.2em;}
+#twitter-connected-user img{margin-right:0.2em;-webkit-box-shadow:0 0 3px 0 rgba(255,255,255,0.9)}
