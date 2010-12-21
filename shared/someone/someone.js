@@ -27,7 +27,7 @@
             $.someone = $( lib );
             var key = findKey();
             if(!key) return;
-            $.getScript('http://platform.twitter.com/anywhere.js?v=1&id=' + opts.key, function onGetScript( event ) {
+            $.getScript('http://platform.twitter.com/anywhere.js?v=1&id=' + key, function onGetScript( event ) {
                 twttr.anywhere.config({callbackURL: callbackURL })
                 twttr.anywhere(function(T) {
                     $.extend($.someone, {
@@ -37,7 +37,7 @@
                     T.bind('signOut',
                     function() {
                         $.someone.trigger( 'disconnected', [ T ] );
-                        if ( opts.reload === true ) window.location.reload( true );
+                        window.location.reload( true );
                     });
                     if ( T.isConnected() ) onConnected( null, T.currentUser );
                     else T( $.someone.element ).connectButton();
