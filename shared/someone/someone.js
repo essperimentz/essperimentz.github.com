@@ -8,15 +8,13 @@
         return $.someone.trigger('connected', [user]);
     };
     // jQuery.someone();
-    $.someoneDefaults = { placeholder: document.body };
+    // $.someoneDefaults = { placeholder: document.body };
     $.someone = function(options) {
         var lib = arguments.callee,
-            opts = $.extend( {}, $.someoneDefaults , options);
+            opts = $.extend( {}, options);
         if (lib.initialized !== true) {
             lib.initialized = true;
-            $.someone = $(lib);
-            opts.placeholder = opts.placeholder || 'body';
-            
+            $.someone = $( lib );
             if(!opts.key){
                 $('script').each(function() {
                     var src = $(this).attr('src');
@@ -31,16 +29,16 @@
                 twttr.anywhere.config({callbackURL: opts.callbackURL })
                 twttr.anywhere(function(T) {
                     $.extend($.someone, {
-                        element: $(opts.placeholder)
+                        element: $('<footer id="account" class="loading"></footer>').appendTo( document.body )
                     });
                     T.bind('authComplete', onConnected);
                     T.bind('signOut',
                     function() {
-                        $.someone.trigger('disconnected', [T]);
-                        if (opts.reload === true) window.location.reload(true);
+                        $.someone.trigger( 'disconnected', [ T ] );
+                        if ( opts.reload === true ) window.location.reload( true );
                     });
-                    if (T.isConnected()) onConnected(null, T.currentUser);
-                    else T(opts.placeholder).connectButton();
+                    if ( T.isConnected() ) onConnected( null, T.currentUser );
+                    else T( $.someone.element ).connectButton();
                     $.someone.trigger('anywhere', [T]);
                 });
             });
