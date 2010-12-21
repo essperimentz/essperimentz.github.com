@@ -47,4 +47,10 @@
         };
         return $.someone;
     };
+	$.someone.bind('anywhere',function(event) {		
+		$('#account').removeClass('loading');
+	});		
+	$.someone.bind('connected',function(event) {
+		$('#account').removeClass('loading');			
+	});
 })()
