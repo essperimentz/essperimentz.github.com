@@ -1,11 +1,24 @@
-html > body{padding-top:34px!important;position:relative;}
-#twitter-account{position:fixed;top:0;padding:0 1em;left:0;right:0;background:rgba(0,0,0,0.75);font-size:12px;height:34px;vertical-align:center;font-family:sans-serif;color:#fff;text-align:right;-webkit-box-shadow:0 0 2px 0 #000;-moz-box-shadow:0 0 2px 0 #000;box-shadow:0 0 2px 0 #000;border-bottom:1px solid rgba(0,0,0,0.9);}
-#twitter-account.loading{background-image:url(http://essperimentz.ca/shared/someone/loader.gif);background-position:10px center;background-repeat:no-repeat;}
-#twitter-account *{display:inline-block;vertical-align:middle;line-height:34px;}
-#twitter-account iframe{margin-top:0.5em;}
-#twitter-account p{padding:0 0.75em;margin:0 0.75em;background:rgba(0,0,0,0.75);font-weight:bold;}
-#twitter-disconnect{display:inline-block;height:22px;width:146px;overflow:hidden;padding:0;margin:0;background:blue url(./disconnect.png) top left no-repeat;}
-#twitter-disconnect:hover{background-position:0 -23px;}
-#twitter-disconnect:active{background-position:0 -46px;}
-#twitter-connected-user{display:inline-block;padding-right:0.5em;}
-#twitter-connected-user img{margin-right:0.2em;-webkit-box-shadow:0 0 3px 0 rgba(255,255,255,0.9)}
+html > body{padding-top:35px!important;}
+#twitter-session-notifications{display:none;}
+#twitter-session{position:fixed;top:0;right:0;left:0;height:35px;line-height:35px;margin:0;padding:0;background:rgba(0,0,0,0.8);color:#fff;text-shadow:1px 1px 1px rgba(255,255,255,0.2),-1px -1px 1px rgba(0,0,0,0.2);}
+#twitter-session.loading{background-image:url(load.gif);}
+#twitter-session .twitter-word{color:#7BC0FC;font-weight:bold;}
+#twitter-session *{position:relative;margin:0!important;padding:0!important;font-size:15px;font-family:sans-serif;font-weight:normal;}
+#twitter-session-title{width:80%;text-align:center;}
+#twitter-session-button{font-weight:bold;position:absolute;top:0;right:0;width:20%;text-align:center;border-top:0;border-bottom:0;height:35px;border:1px solid #0c0;color:rgba(255,255,255,0.8);}
+#twitter-session-button{background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#009933),color-stop(1,#00cc66));background:-moz-linear-gradient(center bottom,#009933 0%,#00cc66 100%);}
+#twitter-session-button:hover{color:#fff;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#2C6920),color-stop(1,#429F47));background:-moz-linear-gradient(center bottom,#2C6920 0%,#429F47 100%);}
+#twitter-session.connected #twitter-session-button{border-color:#900;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#903),color-stop(1,#c06));background:-moz-linear-gradient(center bottom,#903 0%,#c06 100%);}
+#twitter-session.connected #twitter-session-button:hover{border-color:#900;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#600D22),color-stop(1,#911649));background:-moz-linear-gradient(center bottom,#600D22 0%,#911649 100%);}
+#twitter-session-site{font-weight:bold;color:#fc0;}
+#twitter-session-user{font-weight:bold;color:#f90;}
+#twitter-session-avatar{vertical-align:text-top;border:0;box-shadow:0 0 3px 0 #fff;-moz-box-shadow:0 0 3px 0 #fff;-webkit-box-shadow:0 0 3px 0 #fff;}
+#twitter-session-arrow{font-size:34px;vertical-align:top;color:#fc0;left:0;font-weight:bold;}
+#twitter-session-notifications{position:fixed;top:35px;left:0px;right:0px;height:70px;line-height:35px;color:#000;}
+#twitter-session-notifications .warn{color:#210;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,rgb(220,250,221)),color-stop(1,rgb(245,255,248)));background:-moz-linear-gradient(center bottom,rgb(220,250,221) 0%,rgb(245,255,248) 100%);}
+#twitter-session-notifications .info{color:#003;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,rgb(220,244,250)),color-stop(1,rgb(247,253,255)));background:-moz-linear-gradient(center bottom,rgb(220,244,250) 0%,rgb(247,253,255) 100%);}
+#twitter-session-notifications .error{color:#300;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,rgb(250,220,220)),color-stop(1,rgb(255,247,247)));background:-moz-linear-gradient(center bottom,rgb(250,220,220) 0%,rgb(255,247,247) 100%);}
+#twitter-session-notifications .message{background:#f0f0f0;}
+#twitter-session-notifications .twitter-session-notification button{position:absolute;top:5px;right:5px;border:2px solid #fff;width:20px;height:20px;-moz-border-radius:15px;-webkit-border-radius:15px;font-size:16px;line-height:10px;-moz-box-shadow:0 0 2px 0 rgba(0,0,0,0.8);-webkit-box-shadow:0 0 2px 0 rgba(0,0,0,0.8);background:rgba(0,0,0,0.8);color:#fff;}
+#twitter-session-notifications .twitter-session-notification{position:absolute;height:70px;line-height:70px;left:0;right:0;}
+#twitter-session-notifications .twitter-session-notification p{text-indent:2em;font-weight:bold;}
