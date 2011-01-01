@@ -1,4 +1,4 @@
-html > body{padding-top:35px!important;}
+body{top:35px!important;position:relative;}
 #twitter-session-notifications{display:none;}
 #twitter-session{position:fixed;top:0;right:0;left:0;height:35px;line-height:35px;margin:0;padding:0;background:rgba(0,0,0,0.8);color:#fff;text-shadow:1px 1px 1px rgba(255,255,255,0.2),-1px -1px 1px rgba(0,0,0,0.2);}
 #twitter-session.loading{background-image:url(load.gif);}
@@ -20,5 +20,6 @@ html > body{padding-top:35px!important;}
 #twitter-session-notifications .error{color:#300;background:-webkit-gradient(linear,left bottom,left top,color-stop(0,rgb(250,220,220)),color-stop(1,rgb(255,247,247)));background:-moz-linear-gradient(center bottom,rgb(250,220,220) 0%,rgb(255,247,247) 100%);}
 #twitter-session-notifications .message{background:#f0f0f0;}
 #twitter-session-notifications .twitter-session-notification button{position:absolute;top:5px;right:5px;border:2px solid #fff;width:20px;height:20px;-moz-border-radius:15px;-webkit-border-radius:15px;font-size:16px;line-height:10px;-moz-box-shadow:0 0 2px 0 rgba(0,0,0,0.8);-webkit-box-shadow:0 0 2px 0 rgba(0,0,0,0.8);background:rgba(0,0,0,0.8);color:#fff;}
+#twitter-session-notifications .twitter-session-notification button:hover{background:#999;}
 #twitter-session-notifications .twitter-session-notification{position:absolute;height:70px;line-height:70px;left:0;right:0;}
 #twitter-session-notifications .twitter-session-notification p{text-indent:2em;font-weight:bold;}
